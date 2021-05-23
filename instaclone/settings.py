@@ -13,6 +13,9 @@ import os
 from decouple import config, Csv
 import dj_database_url
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'instagram',
     'crispy_forms',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +146,16 @@ LOGOUT_REDIRECT_URL = 'login'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dzub8b65i',
+#     'API_KEY': '232297643923456',
+#     'API_SECRET': 'SI9zDZhG1rioWzfsydtlgS9DBg4',
+# }
+
+cloudinary.config( 
+  cloud_name = "dzub8b65i", 
+  api_key = "232297643923456", 
+  api_secret = "SI9zDZhG1rioWzfsydtlgS9DBg4" 
+)
+
