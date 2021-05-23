@@ -17,6 +17,7 @@ Users can sign up, login, view and post photos, search and follow other users.
  <img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/readme5.png">
 
 ###### admin
+ <img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/admin.png">
  
 ## User Story  
   
