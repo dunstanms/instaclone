@@ -10,8 +10,13 @@ Users can sign up, login, view and post photos, search and follow other users.
   
 ## Screenshots 
 ###### Home page
- 
+<img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/readme3.png">
 
+###### user profile
+
+ <img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/readme5.png">
+
+###### admin
  
 ## User Story  
   
