@@ -18,7 +18,7 @@ Users can sign up, login, view and post photos, search and follow other users.
 
 ###### admin
  <img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/admin.png">
- 
+
 ## User Story  
   
 * Sign in to the application to start using.  
@@ -38,7 +38,7 @@ To get the project .......
 ```
 ##### Navigate into the folder and install requirements  
  ```bash 
-cd insta-lite pip install -r requirements.txt 
+cd instaclone pip install -r requirements.txt 
 ```
 ##### Install and activate Virtual  
  ```bash 
