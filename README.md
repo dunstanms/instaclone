@@ -34,7 +34,7 @@ To get the project .......
   
 ##### Cloning the repository:  
  ```bash 
- 
+ https://github.com/ubuntustan/instaclone.git
 ```
 ##### Navigate into the folder and install requirements  
  ```bash 
