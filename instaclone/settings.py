@@ -13,6 +13,8 @@ import os
 from decouple import config, Csv
 import dj_database_url
 from pathlib import Path
+import django_heroku
+
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'instaclone.urls'
@@ -80,7 +83,25 @@ WSGI_APPLICATION = 'instaclone.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+if config('MODE')=="dev":
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+# production
+else:
+   DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -147,15 +168,16 @@ LOGOUT_REDIRECT_URL = 'login'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dzub8b65i',
-#     'API_KEY': '232297643923456',
-#     'API_SECRET': 'SI9zDZhG1rioWzfsydtlgS9DBg4',
-# }
-
 cloudinary.config( 
   cloud_name = "dzub8b65i", 
   api_key = "232297643923456", 
   api_secret = "SI9zDZhG1rioWzfsydtlgS9DBg4" 
 )
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Configure Django App for Heroku.
+django_heroku.settings(locals())
