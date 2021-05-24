@@ -9,6 +9,9 @@ Users can sign up, login, view and post photos, search and follow other users.
  Click [View SIte](https://stan-instaclone.herokuapp.com/)  to visit the site
   
 ## Screenshots 
+###### ERD DIAGRAM
+<img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/erd2.png">
+
 ###### Home page
 <img src="https://raw.githubusercontent.com/ubuntustan/instaclone/master/static/images/readme3.png">
 
