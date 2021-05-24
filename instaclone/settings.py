@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'instagram',
     'crispy_forms',
     'cloudinary',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
